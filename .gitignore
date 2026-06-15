@@ -1,0 +1,17 @@
+# Android Build Artifacts
+android/build/
+android/app/build/
+android/.gradle/
+android/local.properties
+android/.idea/
+android/**/*.iml
+android/*.iml
+
+# Python
+__pycache__/
+*.pyc
+
+# Local Configs
+.idea/
+.vscode/
+android/gradle-*.zip*

@@ -1,0 +1,51 @@
+/* ~/.config/eww/eww.scss */
+* {
+  all: unset;
+  font-family: "TAU-Kabilar", "Kabilar", sans-serif;
+}
+
+.card {
+  background-color: rgba(30, 30, 46, 0.85); /* Sleek translucent dark theme */
+  border-radius: 12px;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+
+.header-row {
+  margin-bottom: 6px;
+}
+
+.kural-num {
+  font-size: 16px;
+  font-weight: 800;
+  color: #f9e2af; /* Nice gold color */
+}
+
+.paal {
+  font-size: 14px;
+  font-weight: 600;
+  color: #89b4fa; /* Accent blue */
+}
+
+.kural-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: #cdd6f4;
+  margin-bottom: 8px;
+}
+
+.urai-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #a6adc8;
+  margin-bottom: 2px;
+}
+
+.urai-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #bac2de;
+}

@@ -1,0 +1,128 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.yourname.thirukuraldaily"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <permission
+11-->[androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+12        android:name="com.yourname.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+12-->[androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+13        android:protectionLevel="signature" />
+13-->[androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+14
+15    <uses-permission android:name="com.yourname.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+15-->[androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+15-->[androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+16
+17    <application
+17-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:4:5-24:19
+18        android:allowBackup="true"
+18-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:5:9-35
+19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+19-->[androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+20        android:debuggable="true"
+21        android:extractNativeLibs="false"
+22        android:label="@string/app_name"
+22-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:6:9-41
+23        android:supportsRtl="true"
+23-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:7:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.ThirukuralDaily" >
+25-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:8:9-53
+26
+27        <!-- AppWidget Provider -->
+28        <receiver
+28-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:11:9-21:20
+29            android:name="com.yourname.thirukuraldaily.KuralWidgetProvider"
+29-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:12:13-48
+30            android:exported="true" >
+30-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:13:13-36
+31            <intent-filter>
+31-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:14:13-16:29
+32                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+32-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:15:17-84
+32-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:15:25-81
+33            </intent-filter>
+34
+35            <meta-data
+35-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:18:13-20:55
+36                android:name="android.appwidget.provider"
+36-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:19:17-58
+37                android:resource="@xml/widget_info" />
+37-->/home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:20:17-52
+38        </receiver>
+39
+40        <!-- Note: No Activity with LAUNCHER intent filter means this app won't appear in the app drawer -->
+41        <provider
+41-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+42            android:name="androidx.startup.InitializationProvider"
+42-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+43            android:authorities="com.yourname.thirukuraldaily.androidx-startup"
+43-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+44            android:exported="false" >
+44-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+45            <meta-data
+45-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+46                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+46-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+47                android:value="androidx.startup" />
+47-->[androidx.emoji2:emoji2:1.2.0] /home/abe-z/.gradle/caches/transforms-4/446dcb565ba624b091720066db1df077/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+48            <meta-data
+48-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/abe-z/.gradle/caches/transforms-4/b8c281f2c54a2dad61bc87c778b5cdea/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+49                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+49-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/abe-z/.gradle/caches/transforms-4/b8c281f2c54a2dad61bc87c778b5cdea/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+50                android:value="androidx.startup" />
+50-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/abe-z/.gradle/caches/transforms-4/b8c281f2c54a2dad61bc87c778b5cdea/transformed/lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+51            <meta-data
+51-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+52                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+52-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+53                android:value="androidx.startup" />
+53-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+54        </provider>
+55
+56        <receiver
+56-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+57            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+57-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+58            android:directBootAware="false"
+58-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+59            android:enabled="true"
+59-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+60            android:exported="true"
+60-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+61            android:permission="android.permission.DUMP" >
+61-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+62            <intent-filter>
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+63                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+63-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+63-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+64            </intent-filter>
+65            <intent-filter>
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+66                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+67            </intent-filter>
+68            <intent-filter>
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+69                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+70            </intent-filter>
+71            <intent-filter>
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+72                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/abe-z/.gradle/caches/transforms-4/8a3d37ee385e6c84ba5e800b225df9e0/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+73            </intent-filter>
+74        </receiver>
+75    </application>
+76
+77</manifest>

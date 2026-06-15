@@ -1,0 +1,28 @@
+;; ~/.config/eww/eww.yuck
+(defpoll kural_data
+  :interval "1h"
+  :initial "{}"
+  "python3 /home/abe-z/Projects/kural_widget/kural_flashcard.py --json")
+
+(defwidget kural-card []
+  (box :class "card" :orientation "v" :space-evenly false :spacing 6 :valign "start" :hexpand true
+    (box :class "header-row" :orientation "h" :space-evenly false :spacing 12
+      (label :class "kural-num" :text "குறள் ${kural_data.id}")
+      (label :class "paal" :text "—  ${kural_data.paal}"))
+    (label :class "kural-text" :text "${kural_data.kural_line1}" :wrap true :halign "start" :justify "left")
+    (label :class "kural-text" :text "${kural_data.kural_line2}" :wrap true :halign "start" :justify "left")
+    (label :class "urai-label" :text "கலைஞர் உரை:" :halign "start")
+    (label :class "urai-text" :text "${kural_data.urai}" :wrap true :halign "start" :justify "left")))
+
+(defwindow kural
+  :monitor 0
+  :geometry (geometry
+              :x "20px"
+              :y "20px"
+              :width "550px"
+              :height "220px"
+              :anchor "bottom right")
+  :stacking "bg"
+  :exclusive false
+  :focusable false
+  (kural-card))
