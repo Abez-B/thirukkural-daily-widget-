@@ -12,14 +12,14 @@ android {
         applicationId "com.abezb.thirukuraldaily"
         minSdk 26
         targetSdk 34
-        versionCode 14
-        versionName "1.1.4"
+        versionCode 15
+        versionName "1.1.5"
     }
 
     signingConfigs {
         release {
-            def keystoreFile = new File("release.keystore")
-            if (System.getenv("KEYSTORE_BASE64") != null) {
+            def keystoreFile = project.file("release.keystore")
+            if (System.getenv("KEYSTORE_BASE64") != null && !System.getenv("KEYSTORE_BASE64").isEmpty()) {
                 def decodedBytes = Base64.getDecoder().decode(System.getenv("KEYSTORE_BASE64").replaceAll("\\s", ""))
                 keystoreFile.withOutputStream { it.write(decodedBytes) }
             }
