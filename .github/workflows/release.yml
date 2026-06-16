@@ -43,17 +43,25 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
-          if [ -z "$KEYSTORE_BASE64" ]; then
-            echo "ERROR: KEYSTORE_FILE secret is completely empty or missing! Please check GitHub Secrets."
-            exit 1
-          fi
-          if [ -z "$KEYSTORE_PASSWORD" ]; then
-            echo "ERROR: KEYSTORE_PASSWORD secret is empty!"
+          echo "====================== DEBUG INFO ======================"
+          echo "Length of KEYSTORE_FILE secret: ${#KEYSTORE_BASE64}"
+          echo "Length of KEYSTORE_PASSWORD secret: ${#KEYSTORE_PASSWORD}"
+          echo "Length of KEY_PASSWORD secret: ${#KEY_PASSWORD}"
+          echo "Length of KEYSTORE_ALIAS secret: ${#KEY_ALIAS}"
+          echo "========================================================"
+          
+          if [ "${#KEYSTORE_BASE64}" -lt 100 ]; then
+            echo "❌ ERROR: Your KEYSTORE_FILE secret is only ${#KEYSTORE_BASE64} characters long!"
+            echo "A valid Keystore Base64 string should be over 3000 characters."
+            echo "You either didn't save the secret, saved it in the wrong place, or copied it incorrectly."
             exit 1
           fi
           
           # Decode keystore robustly using python
-          python -c "import base64, os; open('release.keystore', 'wb').write(base64.b64decode(os.environ['KEYSTORE_BASE64']))"
+          if ! python -c "import base64, os; open('release.keystore', 'wb').write(base64.b64decode(os.environ['KEYSTORE_BASE64']))"; then
+            echo "❌ ERROR: Python failed to decode the Base64 string! It contains invalid characters."
+            exit 1
+          fi
           
           # Find the latest build tools directory automatically
           export BUILD_TOOLS=$(ls -d /usr/local/lib/android/sdk/build-tools/* | tail -1)
