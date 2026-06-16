@@ -3,8 +3,9 @@
 A cross-platform daily Thirukkural flashcard widget. Cycles through all 1330 Kurals, showing one perfectly-formatted Kural each day.
 
 <p align="center">
-  <img src="android-kural.jpg" alt="Android Widget" width="45%" />
-  <img src="linux-kural.jpg" alt="Linux Widget" width="45%" />
+  <img src="screenshots/android-kural.jpg" alt="Android Widget" width="30%" />
+  <img src="screenshots/linux-kural.jpg" alt="Linux Widget" width="30%" />
+  <img src="screenshots/windows-kural.png" alt="Windows Widget" width="30%" />
 </p>
 ## Platforms Supported
 
