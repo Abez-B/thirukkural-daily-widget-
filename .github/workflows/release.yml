@@ -32,48 +32,17 @@ jobs:
         working-directory: ./android
         run: gradle wrapper --gradle-version 8.7
 
-      - name: Build Release APK
+      - name: Build and Sign Release APK
         working-directory: ./android
-        run: ./gradlew assembleRelease
-
-      - name: Sign APK manually
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_FILE }}
-          KEY_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
+          KEYSTORE_ALIAS: ${{ secrets.KEYSTORE_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-        run: |
-          echo "====================== DEBUG INFO ======================"
-          echo "Length of KEYSTORE_FILE secret: ${#KEYSTORE_BASE64}"
-          echo "Length of KEYSTORE_PASSWORD secret: ${#KEYSTORE_PASSWORD}"
-          echo "Length of KEY_PASSWORD secret: ${#KEY_PASSWORD}"
-          echo "Length of KEYSTORE_ALIAS secret: ${#KEY_ALIAS}"
-          echo "========================================================"
-          
-          if [ "${#KEYSTORE_BASE64}" -lt 100 ]; then
-            echo "❌ ERROR: Your KEYSTORE_FILE secret is only ${#KEYSTORE_BASE64} characters long!"
-            echo "A valid Keystore Base64 string should be over 3000 characters."
-            echo "You either didn't save the secret, saved it in the wrong place, or copied it incorrectly."
-            exit 1
-          fi
-          
-          # Decode keystore robustly using python
-          if ! python -c "import base64, os; open('release.keystore', 'wb').write(base64.b64decode(os.environ['KEYSTORE_BASE64']))"; then
-            echo "❌ ERROR: Python failed to decode the Base64 string! It contains invalid characters."
-            exit 1
-          fi
-          
-          # Find the latest build tools directory automatically
-          export BUILD_TOOLS=$(ls -d /usr/local/lib/android/sdk/build-tools/* | tail -1)
-          
-          # Zipalign the APK
-          $BUILD_TOOLS/zipalign -v -p 4 android/app/build/outputs/apk/release/app-release-unsigned.apk app-release-aligned.apk
-          
-          # Sign the APK
-          $BUILD_TOOLS/apksigner sign --ks release.keystore --ks-key-alias "$KEY_ALIAS" --ks-pass pass:"$KEYSTORE_PASSWORD" --key-pass pass:"$KEY_PASSWORD" --out Thirukkural-Widget-${{ github.ref_name }}.apk app-release-aligned.apk
-          
-          # Clean up
-          rm release.keystore app-release-aligned.apk
+        run: ./gradlew assembleRelease
+
+      - name: Rename APK
+        run: mv android/app/build/outputs/apk/release/app-release.apk Thirukkural-Widget-${{ github.ref_name }}.apk
 
       - name: Publish to GitHub Releases
         uses: softprops/action-gh-release@v2
