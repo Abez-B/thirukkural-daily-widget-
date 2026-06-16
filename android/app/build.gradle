@@ -12,8 +12,8 @@ android {
         applicationId "com.abezb.thirukuraldaily"
         minSdk 26
         targetSdk 34
-        versionCode 15
-        versionName "1.1.5"
+        versionCode 16
+        versionName "1.1.6"
     }
 
     signingConfigs {
@@ -24,9 +24,10 @@ android {
                 keystoreFile.withOutputStream { it.write(decodedBytes) }
             }
             storeFile keystoreFile
-            storePassword System.getenv("KEYSTORE_PASSWORD")
-            keyAlias System.getenv("KEYSTORE_ALIAS")
-            keyPassword System.getenv("KEY_PASSWORD")
+            storePassword "kural123"
+            keyAlias "upload"
+            keyPassword "kural123"
+            storeType "PKCS12"
         }
     }
 
