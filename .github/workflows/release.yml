@@ -43,8 +43,8 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
-          # Decode keystore
-          echo "$KEYSTORE_BASE64" | base64 --decode > release.keystore
+          # Decode keystore robustly using python
+          python -c "import base64, os; open('release.keystore', 'wb').write(base64.b64decode(os.environ['KEYSTORE_BASE64']))"
           
           # Find the latest build tools directory automatically
           export BUILD_TOOLS=$(ls -d /usr/local/lib/android/sdk/build-tools/* | tail -1)
