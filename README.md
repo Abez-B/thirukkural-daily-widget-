@@ -2,23 +2,35 @@
 
 A cross-platform daily Thirukkural flashcard widget. Cycles through all 1330 Kurals, showing one perfectly-formatted Kural each day.
 
-<p align="center">
-  <img src="screenshots/android-kural.jpg" alt="Android Widget" width="30%" />
-  <img src="screenshots/linux-kural.jpg" alt="Linux Widget" width="30%" />
-  <img src="screenshots/windows-kural.png" alt="Windows Widget" width="30%" />
-</p>
+<table>
+  <tr>
+    <td width="50%">
+      <img src="screenshots/android-kural.jpg" alt="Android Widget" width="100%" />
+    </td>
+    <td width="50%">
+      <img src="screenshots/linux-kural.jpg" alt="Linux Widget" width="100%" />
+      <br/><br/>
+      <img src="screenshots/windows-kural.png" alt="Windows Widget" width="100%" />
+    </td>
+  </tr>
+</table>
+
 ## Platforms Supported
 
 1. **Linux (Wayland)**: A stunning, minimal `eww` widget specifically designed for modern compositors like Hyprland/Sway.
 2. **Linux (X11)**: A fallback `conky` widget mirroring the Wayland aesthetic.
-3. **Android**: A completely "invisible" Android app (no icon in your app drawer) that provides a beautiful Home Screen widget with battery-friendly background updates.
+3. **Windows**: A beautifully integrated Rainmeter skin.
+4. **Android**: A completely "invisible" Android app (no icon in your app drawer) that provides a beautiful Home Screen widget with battery-friendly background updates.
 
 ## Features
 
 - **1330-Day Epoch Math**: Cycles through every Kural without repeating.
 - **Pure Tamil Typography**: Includes the `TAU-Kabilar` font for native formatting without blocks or weird characters.
 - **Kalaignar Urai**: Shows Dr. M. Karunanidhi's explanation tightly wrapped to fit.
-- **Interactive**: (Android) Tap the dice 🎲 icon to roll a random Kural, or tap the background to return to today's daily Kural.
+
+## 🎲 The Randomiser Dice
+
+Feeling curious? Tap the 🎲 **Dice Icon** on the Android widget to instantly generate a random Kural! It's a great way to discover new wisdom throughout your day. Once you're done reading, simply tap anywhere on the widget background to snap right back to today's daily Kural.
 
 ---
 
