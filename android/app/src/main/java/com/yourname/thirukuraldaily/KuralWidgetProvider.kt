@@ -45,7 +45,8 @@ internal fun updateAppWidget(
     
     if (kural != null) {
         views.setTextViewText(R.id.kural_num, "குறள் ${kural.id}")
-        views.setTextViewText(R.id.paal, "—  ${kural.paal}")
+        val todayStr = java.time.LocalDate.now().toString()
+        views.setTextViewText(R.id.paal, "—  ${kural.paal} ($todayStr)")
         views.setTextViewText(R.id.kural_line1, kural.kuralLine1)
         views.setTextViewText(R.id.kural_line2, kural.kuralLine2)
         views.setTextViewText(R.id.urai, kural.urai)
