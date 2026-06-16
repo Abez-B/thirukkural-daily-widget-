@@ -21,11 +21,6 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Install SQLite3
-        run: sudo apt-get install -y sqlite3
-
-      - name: Generate Database
-        run: sqlite3 android/app/src/main/assets/thirukural.db < android/app/src/main/assets/thirukural.sql
 
       - name: Make gradlew executable
         run: chmod +x android/gradlew
