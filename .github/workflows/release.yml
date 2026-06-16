@@ -43,6 +43,15 @@ jobs:
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "ERROR: KEYSTORE_FILE secret is completely empty or missing! Please check GitHub Secrets."
+            exit 1
+          fi
+          if [ -z "$KEYSTORE_PASSWORD" ]; then
+            echo "ERROR: KEYSTORE_PASSWORD secret is empty!"
+            exit 1
+          fi
+          
           # Decode keystore robustly using python
           python -c "import base64, os; open('release.keystore', 'wb').write(base64.b64decode(os.environ['KEYSTORE_BASE64']))"
           
