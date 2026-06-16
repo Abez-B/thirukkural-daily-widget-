@@ -30,7 +30,7 @@ jobs:
 
       - name: Regenerate Gradle Wrapper JAR
         working-directory: ./android
-        run: gradle wrapper
+        run: gradle wrapper --gradle-version 8.7
 
       - name: Build Release APK
         working-directory: ./android
