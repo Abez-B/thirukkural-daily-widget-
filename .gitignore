@@ -15,3 +15,5 @@ __pycache__/
 .idea/
 .vscode/
 android/gradle-*.zip*
+*.db
+android/gradle/wrapper/gradle-wrapper.jar
