@@ -28,6 +28,10 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
+      - name: Regenerate Gradle Wrapper JAR
+        working-directory: ./android
+        run: gradle wrapper
+
       - name: Build Release APK
         working-directory: ./android
         run: ./gradlew assembleRelease
