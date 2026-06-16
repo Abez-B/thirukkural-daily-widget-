@@ -1,0 +1,1 @@
+A cross-platform daily Thirukkural flashcard widget. Cycles through all 1330 Kurals, showing one perfectly-formatted Kural each day with native Tamil typography and Dr. Kalaignar's explanations. Features a completely invisible background-only footprint and native zero-battery epoch cycle math.

@@ -1,0 +1,1 @@
+A beautiful, minimal daily Thirukkural flashcard widget.
