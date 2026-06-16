@@ -2,8 +2,10 @@
 
 A cross-platform daily Thirukkural flashcard widget. Cycles through all 1330 Kurals, showing one perfectly-formatted Kural each day.
 
-![Thirukkural Widget](https://i.imgur.com/placeholder.png)
-
+<p align="center">
+  <img src="android-kural.jpg" alt="Android Widget" width="45%" />
+  <img src="linux-kural.jpg" alt="Linux Widget" width="45%" />
+</p>
 ## Platforms Supported
 
 1. **Linux (Wayland)**: A stunning, minimal `eww` widget specifically designed for modern compositors like Hyprland/Sway.
