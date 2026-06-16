@@ -52,7 +52,7 @@ def main():
     k_line1 = kural_lines[0] if len(kural_lines) > 0 else ""
     k_line2 = kural_lines[1] if len(kural_lines) > 1 else ""
 
-    output = f"{kural_id}|{paal}|{k_line1}|{k_line2}|{urai}"
+    output = f"குறள் {kural_id}|—|{paal}|🎲|கலைஞர் உரை:|{k_line1}|{k_line2}|{urai}"
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         f.write(output)
 
