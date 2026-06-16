@@ -1,22 +1,18 @@
 [
     {
-        "merged": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-merged_res-31:/drawable_widget_bg.xml.flat",
-        "source": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-main-33:/drawable/widget_bg.xml"
+        "merged": "com.abezb.thirukuraldaily.app-merged_res-31:/layout_activity_detail.xml.flat",
+        "source": "com.abezb.thirukuraldaily.app-main-33:/layout/activity_detail.xml"
     },
     {
-        "merged": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-merged_res-31:/xml_widget_info.xml.flat",
-        "source": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-main-33:/xml/widget_info.xml"
+        "merged": "com.abezb.thirukuraldaily.app-merged_res-31:/xml_widget_info.xml.flat",
+        "source": "com.abezb.thirukuraldaily.app-main-33:/xml/widget_info.xml"
     },
     {
-        "merged": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-merged_res-31:/layout_activity_detail.xml.flat",
-        "source": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-main-33:/layout/activity_detail.xml"
+        "merged": "com.abezb.thirukuraldaily.app-merged_res-31:/drawable_widget_bg.xml.flat",
+        "source": "com.abezb.thirukuraldaily.app-main-33:/drawable/widget_bg.xml"
     },
     {
-        "merged": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-merged_res-31:/layout_widget_layout.xml.flat",
-        "source": "/home/abe-z/.gradle/daemon/8.7/com.yourname.thirukuraldaily.app-main-33:/layout/widget_layout.xml"
-    },
-    {
-        "merged": "com.yourname.thirukuraldaily.app-merged_res-31:/layout_widget_layout.xml.flat",
-        "source": "com.yourname.thirukuraldaily.app-main-33:/layout/widget_layout.xml"
+        "merged": "com.abezb.thirukuraldaily.app-merged_res-31:/layout_widget_layout.xml.flat",
+        "source": "com.abezb.thirukuraldaily.app-main-33:/layout/widget_layout.xml"
     }
 ]

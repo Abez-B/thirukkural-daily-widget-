@@ -1,4 +1,4 @@
-package com.yourname.thirukuraldaily
+package com.abezb.thirukuraldaily
 
 import android.os.Bundle
 import android.widget.Button

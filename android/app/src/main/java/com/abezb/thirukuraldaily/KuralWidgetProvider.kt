@@ -1,4 +1,4 @@
-package com.yourname.thirukuraldaily
+package com.abezb.thirukuraldaily
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -10,7 +10,7 @@ import android.widget.RemoteViews
 class KuralWidgetProvider : AppWidgetProvider() {
 
     companion object {
-        const val ACTION_RANDOM = "com.yourname.thirukuraldaily.ACTION_RANDOM"
+        const val ACTION_RANDOM = "com.abezb.thirukuraldaily.ACTION_RANDOM"
     }
 
     override fun onReceive(context: Context, intent: Intent) {

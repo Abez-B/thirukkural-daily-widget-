@@ -1,4 +1,4 @@
-package com.yourname.thirukuraldaily
+package com.abezb.thirukuraldaily
 
 data class KuralModel(
     val id: Int,

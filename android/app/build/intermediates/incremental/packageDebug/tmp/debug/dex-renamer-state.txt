@@ -1,6 +1,6 @@
-#Mon Jun 15 20:11:34 IST 2026
-base.2=/home/abe-z/Projects/kural_widget/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
-path.2=11/classes.dex
+#Tue Jun 16 08:55:39 IST 2026
+base.2=/home/abe-z/Projects/kural_widget/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
+path.2=8/classes.dex
 base.1=/home/abe-z/Projects/kural_widget/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 path.1=0/classes.dex
 base.0=/home/abe-z/Projects/kural_widget/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex

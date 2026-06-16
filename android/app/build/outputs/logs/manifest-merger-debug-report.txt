@@ -84,7 +84,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/abe-z/.gradle/caches/
 		ADDED from /home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:5:9-35
 	android:theme
 		ADDED from /home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:8:9-53
-receiver#com.yourname.thirukuraldaily.KuralWidgetProvider
+receiver#com.abezb.thirukuraldaily.KuralWidgetProvider
 ADDED from /home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:11:9-21:20
 	android:exported
 		ADDED from /home/abe-z/Projects/kural_widget/android/app/src/main/AndroidManifest.xml:13:13-36
@@ -220,7 +220,7 @@ ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a
 		ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-permission#com.yourname.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.abezb.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
@@ -230,7 +230,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
-uses-permission#com.yourname.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.abezb.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] /home/abe-z/.gradle/caches/transforms-4/a09928384ec1935e808ab75bc8da5541/transformed/core-1.12.0/AndroidManifest.xml:26:22-94

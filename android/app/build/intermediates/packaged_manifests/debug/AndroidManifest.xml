@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yourname.thirukuraldaily"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.abezb.thirukuraldaily"
+    android:versionCode="2"
+    android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="34" />
 
     <permission
-        android:name="com.yourname.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.abezb.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.yourname.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.abezb.thirukuraldaily.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +25,7 @@
 
         <!-- AppWidget Provider -->
         <receiver
-            android:name="com.yourname.thirukuraldaily.KuralWidgetProvider"
+            android:name="com.abezb.thirukuraldaily.KuralWidgetProvider"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -39,7 +39,7 @@
         <!-- Note: No Activity with LAUNCHER intent filter means this app won't appear in the app drawer -->
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.yourname.thirukuraldaily.androidx-startup"
+            android:authorities="com.abezb.thirukuraldaily.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

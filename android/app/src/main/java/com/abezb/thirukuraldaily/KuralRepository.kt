@@ -1,4 +1,4 @@
-package com.yourname.thirukuraldaily
+package com.abezb.thirukuraldaily
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

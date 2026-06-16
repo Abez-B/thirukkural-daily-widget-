@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.yourname.thirukuraldaily.app-mergeDebugResources-29:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.abezb.thirukuraldaily.app-mergeDebugResources-29:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
                     "source": "/home/abe-z/.gradle/caches/transforms-4/aab7af3e5d36cf4acf79358de2256105/transformed/appcompat-1.6.1/res/values-ldltr-v21/values-ldltr-v21.xml",

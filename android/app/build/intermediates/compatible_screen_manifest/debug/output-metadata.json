@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.yourname.thirukuraldaily",
+  "applicationId": "com.abezb.thirukuraldaily",
   "variantName": "debug",
   "elements": []
 }
