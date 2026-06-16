@@ -9,7 +9,7 @@ import sys
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, "thirukural.db")
 CYCLE_PATH = os.path.join(BASE_DIR, "kural_cycle.json")
-OUTPUT_PATH = os.path.join(BASE_DIR, "output.txt")
+OUTPUT_PATH = os.path.join(BASE_DIR, "variables.inc")
 
 def get_kural_id(random_kural=False) -> int:
     with open(CYCLE_PATH, "r", encoding="utf-8") as f:
@@ -52,9 +52,17 @@ def main():
     k_line1 = kural_lines[0] if len(kural_lines) > 0 else ""
     k_line2 = kural_lines[1] if len(kural_lines) > 1 else ""
 
-    output = f"குறள் {kural_id}|—|{paal}|🎲|கலைஞர் உரை:|{k_line1}|{k_line2}|{urai}"
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        f.write(output)
+    with open(OUTPUT_PATH, "w", encoding="utf-16-le") as f:
+        f.write("\ufeff")  # BOM
+        f.write("[Variables]\n")
+        f.write(f"KuralID=குறள் {kural_id}\n")
+        f.write(f"Dash=—\n")
+        f.write(f"Paal={paal}\n")
+        f.write(f"Dice=🎲\n")
+        f.write(f"UraiTitle=கலைஞர் உரை:\n")
+        f.write(f"Line1={k_line1}\n")
+        f.write(f"Line2={k_line2}\n")
+        f.write(f'Urai="{urai}"\n')
 
 if __name__ == "__main__":
     main()
