@@ -12,17 +12,20 @@ android {
         applicationId "com.abezb.thirukuraldaily"
         minSdk 26
         targetSdk 34
-        versionCode 18
-        versionName "1.1.8"
+        versionCode 19
+        versionName "1.1.9"
     }
 
     signingConfigs {
         release {
-            storeFile project.file("github_keystore.jks")
-            storePassword "kural123"
-            keyAlias "upload"
-            keyPassword "kural123"
-            storeType "PKCS12"
+            def keystoreFile = project.file("github_keystore.jks")
+            if (keystoreFile.exists()) {
+                storeFile keystoreFile
+                storePassword "kural123"
+                keyAlias "upload"
+                keyPassword "kural123"
+                storeType "PKCS12"
+            }
         }
     }
 
