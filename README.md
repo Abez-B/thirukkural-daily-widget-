@@ -7,7 +7,7 @@
 **A beautifully minimal, cross-platform daily Thirukkural widget.**  
 One Kural. Every day. All 1330 — beautifully rendered.
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Abez-B/thirukkural-daily-widget-/blob/main/LICENSE)
 [![F-Droid](https://img.shields.io/f-droid/v/com.abezb.thirukuraldaily.svg?logo=f-droid)](https://f-droid.org/packages/com.abezb.thirukuraldaily/)
 [![GitHub Release](https://img.shields.io/github/v/release/Abez-B/thirukkural-daily-widget-)](https://github.com/Abez-B/thirukkural-daily-widget-/releases)
 [![GitHub Stars](https://img.shields.io/github/stars/Abez-B/thirukkural-daily-widget-?style=flat)](https://github.com/Abez-B/thirukkural-daily-widget-/stargazers)

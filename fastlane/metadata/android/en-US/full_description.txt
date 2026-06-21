@@ -12,7 +12,7 @@ One Kural. Every day. All 1330 — beautifully rendered.
 • <b>Native Tamil Typography</b> — Pristine rendering using the TAU-Kabilar font, with no character blocks or rendering issues.
 • <b>Expert Commentary</b> — Read alongside multiple scholarly explanations for every Kural.
 • <b>Battery Friendly</b> — Completely invisible background footprint. Zero wake-locks. Uses epoch math so the widget never needs to run a background service.
-• <b>100% Open Source</b> — No ads, no telemetry, no proprietary dependencies. Licensed under GPL v3.
+• <b>100% Open Source</b> — No ads, no telemetry, no proprietary dependencies. Licensed under the MIT License.
 
 <b>📖 About the Thirukkural</b>
 
