@@ -1,6 +1,44 @@
 <resources>
+    <!--
+      Monochromatic Design System — Thirukkural Daily v1.3.0
+      Philosophy: hierarchy through typography + elevation + spacing, NOT color.
+    -->
+
+    <!-- ── Dark Theme (default) ───────────────────────────────────────────── -->
+    <color name="dark_bg">#0F0F0F</color>
+    <color name="dark_surface">#171717</color>
+    <color name="dark_surface2">#222222</color>
+    <color name="dark_text_primary">#F5F5F5</color>
+    <color name="dark_text_secondary">#A0A0A0</color>
+    <color name="dark_border">#303030</color>
+
+    <!-- ── Light Theme ────────────────────────────────────────────────────── -->
+    <color name="light_bg">#FAFAFA</color>
+    <color name="light_surface">#FFFFFF</color>
+    <color name="light_surface2">#F3F3F3</color>
+    <color name="light_text_primary">#111111</color>
+    <color name="light_text_secondary">#666666</color>
+    <color name="light_border">#E5E5E5</color>
+
+    <!-- ── Semantic aliases (auto-resolved by DayNight theme) ─────────────── -->
+    <color name="color_background">@color/dark_bg</color>
+    <color name="color_surface">@color/dark_surface</color>
+    <color name="color_surface2">@color/dark_surface2</color>
+    <color name="color_text_primary">@color/dark_text_primary</color>
+    <color name="color_text_secondary">@color/dark_text_secondary</color>
+    <color name="color_border">@color/dark_border</color>
+
+    <!-- ── Accent (restrained — used only for interactive highlights) ──────── -->
+    <!-- A barely-tinted off-white for dark mode; a dark ink for light mode -->
+    <color name="color_accent_dark">#E0E0E0</color>
+    <color name="color_accent_light">#1A1A1A</color>
+
+    <!-- ── Destructive ────────────────────────────────────────────────────── -->
+    <color name="color_destructive">#C0392B</color>
+    <color name="color_destructive_surface">#2D0E0A</color>
+
+    <!-- ── Legacy (kept for build compat only) ────────────────────────────── -->
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
-    <color name="widget_background">#E6FFFFFF</color>
 </resources>

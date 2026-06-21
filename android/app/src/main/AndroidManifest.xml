@@ -8,21 +8,41 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.ThirukuralDaily">
-        
-        <!-- AppWidget Provider -->
+
+        <!-- ── Widget Provider ────────────────────────────────────────── -->
         <receiver
-            android:name=".KuralWidgetProvider"
+            android:name=".widget.KuralWidgetProvider"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <!-- Handle preference changes from MainActivity/BottomSheet -->
+                <action android:name="com.abezb.thirukuraldaily.ACTION_PREFS_CHANGED" />
+                <action android:name="com.abezb.thirukuraldaily.ACTION_PREV" />
+                <action android:name="com.abezb.thirukuraldaily.ACTION_RANDOM" />
             </intent-filter>
-
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
-        
-        <!-- Note: No Activity with LAUNCHER intent filter means this app won't appear in the app drawer -->
+
+        <!-- ── Main Dashboard ─────────────────────────────────────────── -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ThirukuralDaily">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ── Kural Detail Screen (was missing in Phase 2!) ─────────── -->
+        <activity
+            android:name=".ui.KuralDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ThirukuralDaily"
+            android:parentActivityName=".ui.MainActivity" />
+
     </application>
 
 </manifest>

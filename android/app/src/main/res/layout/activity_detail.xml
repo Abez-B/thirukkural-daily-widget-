@@ -1,73 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  activity_detail.xml — Full Kural Detail (Requirement #6)
+  Design: premium reading experience, all content visible, expandable cards.
+  Inspiration: Kindle, Readwise Reader long-form view.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:background="#0F0F0F">
 
+    <!-- ── Top bar ────────────────────────────────────────────────────────── -->
     <LinearLayout
+        android:id="@+id/detail_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/detail_kural"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_marginBottom="8dp" />
-
-        <TextView
-            android:id="@+id/detail_transliteration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Couplet"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-        <TextView
-            android:id="@+id/detail_couplet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Vilakam"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-        <TextView
-            android:id="@+id/detail_vilakam"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Commentary (Kalaingar)"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp" />
-        <TextView
-            android:id="@+id/detail_commentary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp" />
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:background="#0F0F0F">
 
         <Button
             android:id="@+id/btn_close"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="←"
+            android:textColor="#A0A0A0"
+            android:textSize="18sp"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="0dp"
+            android:stateListAnimator="@null" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Close" />
+            android:text="Kural Detail"
+            android:textColor="#505050"
+            android:textSize="13sp"
+            android:letterSpacing="0.06"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btn_share_detail"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:text="↑"
+            android:textColor="#A0A0A0"
+            android:textSize="18sp"
+            android:backgroundTint="@android:color/transparent"
+            android:padding="0dp"
+            android:stateListAnimator="@null" />
 
     </LinearLayout>
-</ScrollView>
+
+    <!-- Thin divider under top bar -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1A1A1A" />
+
+    <!-- ── Scrollable reading content ─────────────────────────────────────── -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="64dp">
+
+            <!-- Kural number badge -->
+            <TextView
+                android:id="@+id/detail_kural_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#505050"
+                android:textSize="12sp"
+                android:letterSpacing="0.08"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Tamil Kural — primary focus, large serif -->
+            <TextView
+                android:id="@+id/detail_kural"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textColor="#F5F5F5"
+                android:fontFamily="serif"
+                android:lineSpacingMultiplier="1.6"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Transliteration -->
+            <TextView
+                android:id="@+id/detail_transliteration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:textColor="#505050"
+                android:fontFamily="sans-serif"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Paal + Adhigaram breadcrumb -->
+            <TextView
+                android:id="@+id/detail_breadcrumb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#606060"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.4"
+                android:layout_marginBottom="40dp" />
+
+            <!-- ── Section: English ──────────────────────────────────────── -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ENGLISH"
+                android:textColor="#404040"
+                android:textSize="10sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/detail_couplet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#D0D0D0"
+                android:textSize="16sp"
+                android:fontFamily="serif"
+                android:lineSpacingMultiplier="1.7"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/detail_vilakam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#707070"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.5"
+                android:layout_marginBottom="36dp" />
+
+            <!-- ── Section: Kalaignar ───────────────────────────────────── -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="கலைஞர் உரை"
+                android:textColor="#404040"
+                android:textSize="10sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kalaignar M. Karunanidhi"
+                android:textColor="#303030"
+                android:textSize="11sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/detail_commentary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#C0C0C0"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.7"
+                android:layout_marginBottom="36dp" />
+
+            <!-- ── Section: Parimezhalakar ─────────────────────────────── -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="பரிமேலழகர் உரை"
+                android:textColor="#404040"
+                android:textSize="10sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Parimezhalakar (Classical)"
+                android:textColor="#303030"
+                android:textSize="11sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/detail_parimezh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#C0C0C0"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.7"
+                android:layout_marginBottom="36dp" />
+
+            <!-- ── Section: M. Varadarajan ─────────────────────────────── -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="வரதராஜனார் உரை"
+                android:textColor="#404040"
+                android:textSize="10sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="M. Varadarajan"
+                android:textColor="#303030"
+                android:textSize="11sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/detail_varadarajan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#C0C0C0"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.7"
+                android:layout_marginBottom="36dp" />
+
+            <!-- ── Section: Solomon Pappaiya ───────────────────────────── -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="சாலமன் பாப்பையா உரை"
+                android:textColor="#404040"
+                android:textSize="10sp"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Solomon Pappaiya"
+                android:textColor="#303030"
+                android:textSize="11sp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/detail_solomon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#C0C0C0"
+                android:textSize="15sp"
+                android:lineSpacingMultiplier="1.7"
+                android:layout_marginBottom="48dp" />
+
+            <!-- ── Attribution footer ─────────────────────────────────── -->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thirukkural by Thiruvalluvar\nThirukkural Daily — open source, F-Droid compatible"
+                android:textColor="#303030"
+                android:textSize="11sp"
+                android:lineSpacingMultiplier="1.5" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -17,3 +17,8 @@ __pycache__/
 android/gradle-*.zip*
 *.db
 android/gradle/wrapper/gradle-wrapper.jar
+
+# Sensitive Keystore Files
+*.keystore
+*.jks
+keystore_base64.txt

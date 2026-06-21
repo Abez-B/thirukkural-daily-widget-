@@ -32,12 +32,21 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/btn_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📤"
+            android:textSize="16sp"
+            android:paddingStart="8dp"
+            android:paddingEnd="4dp" />
+
+        <TextView
             android:id="@+id/btn_random"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="🎲"
             android:textSize="16sp"
-            android:paddingStart="8dp"
+            android:paddingStart="4dp"
             android:paddingEnd="8dp" />
     </LinearLayout>
 

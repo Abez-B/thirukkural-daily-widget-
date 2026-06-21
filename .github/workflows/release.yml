@@ -41,10 +41,15 @@ jobs:
       - name: Rename APK
         run: mv android/app/build/outputs/apk/release/app-release.apk Thirukkural-Widget-${{ github.ref_name }}.apk
 
+      - name: Zip Metadata and Screenshots
+        run: zip -r metadata.zip fastlane/metadata
+
       - name: Publish to GitHub Releases
         uses: softprops/action-gh-release@v2
         with:
-          files: Thirukkural-Widget-${{ github.ref_name }}.apk
+          files: |
+            Thirukkural-Widget-${{ github.ref_name }}.apk
+            metadata.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

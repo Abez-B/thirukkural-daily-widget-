@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Thirukural Daily</string>
+    <string name="widget_description">Displays a daily Thirukkural with customizable fonts and themes</string>
+    <string name="customize_widget">Customize Widget</string>
+    <string name="reset_defaults">Reset to Defaults</string>
+    <string name="share_kural">Share Kural</string>
+    <string name="section_fonts">Fonts</string>
+    <string name="section_themes">Themes</string>
+    <string name="section_appearance">Appearance</string>
+    <string name="section_advanced">Advanced</string>
+    <string name="font_size_label">Font Size</string>
+    <string name="opacity_label">Widget Opacity</string>
+    <string name="commentary_label">Commentary</string>
+    <string name="commentary_kalaingar">Kalaingar (கலைஞர்)</string>
+    <string name="commentary_parimezhalakar">Parimezhalakar (பரிமேலழகர்)</string>
+    <string name="commentary_couplet">English Couplet</string>
 </resources>

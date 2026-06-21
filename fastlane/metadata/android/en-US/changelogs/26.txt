@@ -1,0 +1,8 @@
+Major Update - Thirukkural Widget v1.3.0
+
+• Intelligent Typography Engine: Rebuilt text rendering for widgets to balance multi-line wrapping and dynamically scale text, preventing any layout clipping.
+• Improved Widget Navigation: Replaced random button behavior with persistent history. Tapping 'Back' returns exactly to your previously displayed Kural.
+• Flawless Syncing: Widgets and the app are now perfectly synced. Tapping the widget always opens details for the exact Kural being displayed.
+• App Redesign: Completely overhauled the dashboard to follow a minimalistic, reader-first, monochrome aesthetic with improved typography.
+• Smooth Scrolling: Fixed underlying gesture conflicts, bringing smooth bidirectional scrolling to all customization bottom sheets.
+• Open Source Navigation: Added footer links in the app for GitHub project contribution and issue tracking.
