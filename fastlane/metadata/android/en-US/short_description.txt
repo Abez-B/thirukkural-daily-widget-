@@ -1,1 +1,1 @@
-A beautiful, minimal daily Thirukkural flashcard widget.
+Daily Thirukkural widget. Offline. Open source. Beautiful.

@@ -1,10 +1,33 @@
-A cross-platform daily Thirukkural flashcard widget. Cycles through all 1330 Kurals, showing one perfectly-formatted Kural each day with native Tamil typography and expert explanations.
+Thirukkural Daily Widget brings the timeless wisdom of the Thirukkural — one of humanity's greatest literary works — to your Android home screen, every single day.
 
-Features:
-• Fully offline functionality: No internet connection required.
-• Open Source: 100% free and open-source software with no trackers or ads.
-• Widget Customization: Extensive customization options including beautiful monochromatic themes, typography scaling, and multiple expert commentaries.
-• Multiple Sizes: Fully resizable widgets that gracefully adapt to different home screen layouts.
-• Battery-friendly: Native zero-battery epoch cycle math with a completely invisible background-only footprint.
+One Kural. Every day. All 1330 — beautifully rendered.
 
-<b>Note: The content of this app (Kurals and explanations) is available in Tamil and English.</b>
+<b>✨ Features</b>
+
+• <b>Daily Kural</b> — Cycles through all 1330 Kurals over 1330 days using epoch math. No repeats, no internet required.
+• <b>Random Kural</b> — Tap the shuffle button to explore any Kural, with full back-navigation history.
+• <b>Offline First</b> — Fully functional without any internet connection. No cloud. No trackers. No analytics.
+• <b>Deep Customization</b> — Choose from 7 hand-crafted monochromatic themes: Ink, AMOLED, Parchment, Stone, Palm Leaf, Ghost, and Paper.
+• <b>Multiple Widget Sizes</b> — Resizable widgets that gracefully adapt to any home screen layout.
+• <b>Native Tamil Typography</b> — Pristine rendering using the TAU-Kabilar font, with no character blocks or rendering issues.
+• <b>Expert Commentary</b> — Read alongside multiple scholarly explanations for every Kural.
+• <b>Battery Friendly</b> — Completely invisible background footprint. Zero wake-locks. Uses epoch math so the widget never needs to run a background service.
+• <b>100% Open Source</b> — No ads, no telemetry, no proprietary dependencies. Licensed under GPL v3.
+
+<b>📖 About the Thirukkural</b>
+
+The Thirukkural is a classic Tamil-language text consisting of 1330 couplets (kurals), authored by the poet-philosopher Thiruvalluvar. It is one of the greatest works ever written on ethics, politics, economics, and love — considered a universal guide to living well, regardless of religion, culture, or era.
+
+<b>🎨 Themes</b>
+
+Every theme is carefully designed around a single principle: the text must be the hero. Themes are inspired by real reading materials — ink on paper, aged parchment, palm leaf manuscripts, and stone inscriptions.
+
+<b>📐 Widget Sizes</b>
+
+The widget gracefully scales across different home screen grid sizes. Whether you prefer a compact 2×2 or a full-width reading card, the typography automatically adapts.
+
+<b>🔓 Privacy</b>
+
+This app requests zero permissions. It does not access the internet, your contacts, your location, or any personal data. The entire app database is bundled locally.
+
+<b>Note: Kural text and explanations are available in both Tamil and English.</b>
