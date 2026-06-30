@@ -5,9 +5,14 @@
 -- ═══════════════════════════════════════════════════════════
 
 local skinPath = ''
-local kurals   = {}       -- [id] = {paal, adhig, line1, line2, urai}
-local order    = {}       -- array of kural IDs in cycle order
-local epoch    = ''       -- "YYYY-MM-DD"
+local kurals   = {}
+local order    = {}
+local epoch    = ''
+
+-- UTF-8 byte sequences for special characters (Lua decimal escapes)
+local ARROW_LEFT = '\226\134\144'   -- ← (U+2190)
+local BULLET     = '\194\183'       -- · (U+00B7)
+local GUILLEMET  = '\226\128\186'   -- › (U+203A)
 
 -- ─────────────────────────────────────────────────────────
 --  File helpers
@@ -37,8 +42,8 @@ local function writeOne(path, val)
 end
 
 -- ─────────────────────────────────────────────────────────
---  Load kural data from CSV
---  Format per line: ID|Paal|Adhigaram|Line1|Line2|Urai
+--  Load kural data from kurals.csv
+--  Format: ID|Paal|Adhigaram|Line1|Line2|Urai
 -- ─────────────────────────────────────────────────────────
 
 local function loadKurals()
@@ -52,9 +57,11 @@ local function loadKurals()
             line:match('^(%d+)|([^|]*)|([^|]*)|([^|]*)|([^|]*)|(.-)$')
         if id then
             kurals[tonumber(id)] = {
-                paal=paal, adhig=adhig,
-                line1=l1,  line2=l2,
-                urai=urai
+                paal  = paal,
+                adhig = adhig,
+                line1 = l1,
+                line2 = l2,
+                urai  = urai
             }
         end
     end
@@ -66,31 +73,32 @@ local function loadCycle()
         local n = tonumber(l)
         if n then table.insert(order, n) end
     end
-    epoch = (readOne(skinPath .. 'cycle_epoch.txt') or '2023-12-03'):gsub('%s','')
+    epoch = (readOne(skinPath .. 'cycle_epoch.txt') or '2023-12-03'):gsub('%s', '')
 end
 
 -- ─────────────────────────────────────────────────────────
---  Epoch math — which kural is today's?
+--  Epoch math
 -- ─────────────────────────────────────────────────────────
 
 local function getDailyId()
     local ey, em, ed = epoch:match('(%d+)-(%d+)-(%d+)')
+    if not ey then return order[1] or 1 end
     local eTime = os.time({
-        year=tonumber(ey), month=tonumber(em), day=tonumber(ed),
-        hour=0, min=0, sec=0
+        year  = tonumber(ey), month = tonumber(em), day = tonumber(ed),
+        hour  = 0, min = 0, sec = 0
     })
     local now   = os.date('*t')
     local tTime = os.time({
-        year=now.year, month=now.month, day=now.day,
-        hour=0, min=0, sec=0
+        year  = now.year, month = now.month, day = now.day,
+        hour  = 0, min = 0, sec = 0
     })
-    local days  = math.floor((tTime - eTime) / 86400)
-    local idx   = (days % #order) + 1
+    local days = math.floor((tTime - eTime) / 86400)
+    local idx  = (days % #order) + 1
     return order[idx]
 end
 
 -- ─────────────────────────────────────────────────────────
---  History (stack stored in history.txt, one ID per line)
+--  History  (history.txt — one ID per line, newest last)
 -- ─────────────────────────────────────────────────────────
 
 local function loadHistory()
@@ -109,7 +117,7 @@ local function saveHistory(stack)
 end
 
 -- ─────────────────────────────────────────────────────────
---  Push variables to Rainmeter and redraw
+--  Set Rainmeter variables and redraw
 -- ─────────────────────────────────────────────────────────
 
 local function display(id)
@@ -121,14 +129,12 @@ local function display(id)
 
     local stack = loadHistory()
 
-    -- Build breadcrumb:  Paal  ›  Adhigaram
     local breadcrumb = k.paal
     if k.adhig and k.adhig ~= '' then
-        breadcrumb = k.paal .. '  \xe2\x80\xba  ' .. k.adhig
+        breadcrumb = k.paal .. '  ' .. GUILLEMET .. '  ' .. k.adhig
     end
 
-    -- Previous button: ← when history exists, · otherwise
-    local prevBtn = #stack > 0 and '\xe2\x86\x90' or '\xc2\xb7'
+    local prevBtn = (#stack > 0) and ARROW_LEFT or BULLET
 
     SKIN:Bang('!SetVariable', 'KuralNum',   tostring(id))
     SKIN:Bang('!SetVariable', 'Breadcrumb', breadcrumb)
@@ -143,38 +149,31 @@ local function display(id)
 end
 
 -- ─────────────────────────────────────────────────────────
---  Public API  (called via !CommandMeasure MeasureKural)
+--  Public API  (called via !CommandMeasure MeasureKural "Fn")
 -- ─────────────────────────────────────────────────────────
 
 function Initialize()
-    skinPath = SKIN:GetVariable('@')  -- resolves to @Resources\ path
+    skinPath = SKIN:GetVariable('@')
     loadKurals()
     loadCycle()
-
-    -- Restore last-viewed kural, or default to today
     local saved = tonumber(readOne(skinPath .. 'current.txt') or '')
     display(saved or getDailyId())
 end
 
 function Update()
-    -- Return current kural number as the measure value
     return tonumber(readOne(skinPath .. 'current.txt') or '1') or 1
 end
 
--- Reset to today's kural and clear history
 function Daily()
     writeLines(skinPath .. 'history.txt', {})
     display(getDailyId())
 end
 
--- Pick a random kural, push current to history
 function Random()
     local current = tonumber(readOne(skinPath .. 'current.txt') or '') or getDailyId()
     local stack   = loadHistory()
     table.insert(stack, current)
     saveHistory(stack)
-
-    -- Pick random, avoid same as current
     local newId = current
     if #order > 1 then
         repeat newId = order[math.random(1, #order)] until newId ~= current
@@ -182,7 +181,6 @@ function Random()
     display(newId)
 end
 
--- Go back to previous kural (pop history)
 function Previous()
     local stack = loadHistory()
     if #stack > 0 then
