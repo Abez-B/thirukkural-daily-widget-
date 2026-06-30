@@ -126,7 +126,9 @@ local function applyKural(id)
                     "Paal=" .. k.paal .. "\n" ..
                     "Line1=" .. k.line1 .. "\n" ..
                     "Line2=" .. k.line2 .. "\n" ..
-                    "Urai=" .. k.urai .. "\n"
+                    "Urai=" .. k.urai .. "\n" ..
+                    "WordKural=குறள்\n" ..
+                    "WordUrai=கலைஞர் உரை:\n"
 
     local utf16le = utf8_to_utf16le(content)
     
