@@ -137,6 +137,7 @@ local function display(id)
     local prevBtn = (#stack > 0) and ARROW_LEFT or BULLET
 
     SKIN:Bang('!SetVariable', 'KuralNum',   tostring(id))
+    SKIN:Bang('!SetVariable', 'Paal',       k.paal)
     SKIN:Bang('!SetVariable', 'Breadcrumb', breadcrumb)
     SKIN:Bang('!SetVariable', 'Line1',      k.line1)
     SKIN:Bang('!SetVariable', 'Line2',      k.line2)
